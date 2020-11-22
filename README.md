@@ -42,3 +42,24 @@ Example: add Bootstrap button classes, OnClick event and set the disable to `tru
 
 ```
 The above example will disable the button when clicked and then call the `IncrementCount()` Method
+
+### Re-enable the button after a Task is completed.
+Using the component reference you have access to two methods. `EnableButton()` and `DisableButton()`
+![Screenshot of component in action](countdown.gif)
+```html
+<Mbutton Class="btn btn-primary" OnClick="IncrementCount" DisableOnClick="true" @ref="mbutton">Click Me</Mbutton>
+
+@code {
+    private int currentCount = 0;
+    Mbutton mbutton;
+
+    private async Task IncrementCount()
+    {
+        await Task.Delay(3000);
+        currentCount++;
+        mbutton.EnableButton();
+    }
+}
+
+```
+
