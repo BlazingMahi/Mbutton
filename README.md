@@ -1,5 +1,5 @@
 # BlazingMahi Mbutton
-This is a customzed button implementation for [Blazor](https://blazor.net) and Razor Components applications. It provides the ability to disable the button when clicked.
+This is a customized button implementation for [Blazor](https://blazor.net) and Razor Components applications. It provides the ability to disable the button when clicked.
 
 ![Screenshot of component in action](screenshot.gif)
 
