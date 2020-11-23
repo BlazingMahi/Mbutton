@@ -6,13 +6,14 @@
     <Authors>Tyler Parkerson</Authors>
     <Company />
     <Product />
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Description>Free library for Blazor and Razor Components applications.</Description>
     <Copyright>Copyright 2020 (c) Tyler Parkerson. All rights reserved.</Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/BlazingMahi/Mbutton</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>BlazoingMahiLogo.png</PackageIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 
