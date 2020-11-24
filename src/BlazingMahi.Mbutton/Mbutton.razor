@@ -1,4 +1,4 @@
-﻿<button type="@Type" class="@Class" disabled="@Disabled" @onclick="ToggleDisabled">
+﻿<button type="@Type" class="@Class" disabled="@Disabled" @onclick="ButtonClicked">
    @((MarkupString)Spinner) @ChildContent
 </button>
 
@@ -28,10 +28,13 @@
     [Parameter]
     public string SpinnerClass { get; set; } = "spinner-border spinner-border-sm";
 
+    [Parameter]
+    public int Delay { get; set; } = 10;
+
     public bool Disabled = false;
     public string Spinner = "";
 
-    private void ToggleDisabled()
+    private async Task ButtonClicked()
     {
         if (DisableOnClick)
         {
@@ -40,8 +43,9 @@
             {
                 Spinner = $@"<span class=""{SpinnerClass}"" aria-hidden=""true""></span>";
             }
-        }
-        OnClick.InvokeAsync("clicked");
+        }        
+        await Task.Delay(Delay);
+        await OnClick.InvokeAsync("clicked");
     }
 
     public void EnableButton()
