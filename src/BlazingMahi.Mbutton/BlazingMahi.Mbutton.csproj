@@ -6,14 +6,17 @@
     <Authors>Tyler Parkerson</Authors>
     <Company />
     <Product />
-    <Version>0.2.0</Version>
-    <Description>Free library for Blazor and Razor Components applications.</Description>
+    <Version>0.3.0</Version>
+    <Description>Free Blazor button component that provides the ability to disable the button when clicked.
+Other features: Show loading animation on click and set delay after click.</Description>
     <Copyright>Copyright 2020 (c) Tyler Parkerson. All rights reserved.</Copyright>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/BlazingMahi/Mbutton</PackageProjectUrl>
     <RepositoryUrl>https://github.com/BlazingMahi/Mbutton</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>BlazoingMahiLogo.png</PackageIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>0.3.0.0</AssemblyVersion>
+    <FileVersion>0.3.0.0</FileVersion>
   </PropertyGroup>
 
 
