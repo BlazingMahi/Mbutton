@@ -1,4 +1,6 @@
 # BlazingMahi Mbutton
+![Build](https://github.com/blazingmahi/mbutton/workflows/Fish%20On%20Build/badge.svg)
+
 This is a customized button implementation for [Blazor](https://blazor.net) and Razor Components applications. It provides the ability to disable the button when clicked.
 
 ![Screenshot of component in action](screenshot.gif)
