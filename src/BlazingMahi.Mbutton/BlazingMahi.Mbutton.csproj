@@ -9,7 +9,7 @@
     <Version>0.4.0</Version>
     <Description>Free Blazor button component that provides the ability to disable the button when clicked.
 Other features: Show loading animation on click and set delay after click.</Description>
-    <Copyright>Copyright 2020 (c) Tyler Parkerson. All rights reserved.</Copyright>
+    <Copyright>Copyright 2021 (c) Tyler Parkerson. All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/BlazingMahi/Mbutton</PackageProjectUrl>
     <RepositoryUrl>https://github.com/BlazingMahi/Mbutton</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
