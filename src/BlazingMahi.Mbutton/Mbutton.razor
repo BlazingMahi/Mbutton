@@ -1,12 +1,9 @@
 ﻿<button type="@Type" class="@Class" disabled="@Disabled" @onclick="ButtonClicked">
-   @((MarkupString)Spinner) @ChildContent
+    @((MarkupString)Spinner) @if (!Hide){ @ChildContent } @((MarkupString)SpinnerRight)
 </button>
 
 @code {
 
-    /// <summary>
-    /// Defaults to button.
-    /// </summary>
     [Parameter]
     public string Type { get; set; } = "button";
 
@@ -31,19 +28,28 @@
     [Parameter]
     public int Delay { get; set; } = 10;
 
+    [Parameter]
+    public SpinnerPosition spinnerPosition { get; set; } = SpinnerPosition.Left;
+
     public bool Disabled = false;
+    public bool Hide = false;
     public string Spinner = "";
+    public string SpinnerRight = "";
+
+    public enum SpinnerPosition
+    {
+        Left,
+        Right,
+        Only
+    }
 
     private async Task ButtonClicked()
     {
         if (DisableOnClick)
         {
             Disabled = true;
-            if (SpinnerOnDisabled)
-            {
-                Spinner = $@"<span class=""{SpinnerClass}"" aria-hidden=""true""></span>";
-            }
-        }        
+            SetSpinView();
+        }
         await Task.Delay(Delay);
         await OnClick.InvokeAsync("clicked");
     }
@@ -51,18 +57,36 @@
     public void EnableButton()
     {
         Disabled = false;
-        if (SpinnerOnDisabled){Spinner = "";}
+        if (SpinnerOnDisabled){Spinner = "";SpinnerRight = ""; }
+        Hide = false;
         StateHasChanged();
     }
 
     public void DisableButton()
     {
         Disabled = true;
+        SetSpinView();
+        StateHasChanged();
+    }
+
+    void SetSpinView()
+    {
         if (SpinnerOnDisabled)
         {
-            Spinner = $@"<span class=""{SpinnerClass}"" aria-hidden=""true""></span>";
+            if (spinnerPosition == SpinnerPosition.Right)
+            {
+                SpinnerRight = $@" <span class=""{SpinnerClass}"" aria-hidden=""true""></span>";
+            }
+            else if (spinnerPosition == SpinnerPosition.Only)
+            {
+                Hide = true;
+                Spinner = $@"<span class=""{SpinnerClass}"" aria-hidden=""true""></span> ";
+            }
+            else
+            {
+                Spinner = $@"<span class=""{SpinnerClass}"" aria-hidden=""true""></span> ";
+            }
         }
-        StateHasChanged();
     }
 
 }
