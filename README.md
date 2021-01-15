@@ -90,6 +90,43 @@ You can add a Bootstap spinner to the button when the button is disabled on clic
 }
 
 ```
+### Set Spinner location
+You can set the spinner location on the left (default) , right or only show the spinner.
+```html
+spinnerPosition="Mbutton.SpinnerPosition.Left"
+spinnerPosition="Mbutton.SpinnerPosition.Right"
+spinnerPosition="Mbutton.SpinnerPosition.Only"
+```
+
+![Screenshot of component in action](spinner-pos.gif) ![Screenshot of component in action](spinner-pos-only.gif)
+
+
+
+```html
+
+<Mbutton Class="btn btn-primary" 
+         OnClick="IncrementCount" 
+         DisableOnClick="true" 
+         @ref="mbutton" 
+         SpinnerOnDisabled="true" 
+         spinnerPosition="Mbutton.SpinnerPosition.Only">Click Me</Mbutton>
+
+<p>Current count: @currentCount</p>
+
+@code {
+    private int currentCount = 0;
+    Mbutton mbutton;
+
+    private async Task IncrementCount()
+    {
+        await Task.Delay(3000);
+        currentCount++;
+        mbutton.EnableButton();
+    }
+}
+
+```
+
 #### You can also overide the default Spinner class
 Override with other Bootstrap spinner properties
 https://getbootstrap.com/docs/4.5/components/spinners/#growing-spinner
